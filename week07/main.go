@@ -7,8 +7,8 @@ import (
 
 func main() {
 	var now time.Time = time.Now()
-	var month int = now.Year()
-	fmt.Println(month)
-	fmt.Println(now)
+	//var month time.Month = now.Month()
+	fmt.Printf("Now %dyear %dmonth %d day \n", now.Year(), int(now.Month()), now.Day())
+	fmt.Printf("Now %dhour %dminute %dsecond ", now.Hour(), now.Minute(), now.Second())
 
 }
