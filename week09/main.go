@@ -55,7 +55,7 @@ import (
 func main() {
 	rand.Seed(time.Now().Unix())
 	answer := rand.Intn(6) + 1
-	fmt.Println(answer)
+	//fmt.Println(answer)
 	var win bool = false
 	for guesses := 0; guesses < 3; guesses++ {
 		fmt.Printf("%d번의 기회가 남았습니다. 숫자 입력:", 3-guesses)
@@ -86,7 +86,7 @@ func main() {
 	if win {
 		fmt.Println("당신이 이겼습니다!")
 	} else {
-		fmt.Println("당신이 졌습니다")
+		fmt.Printf("당신이 졌습니다. 정답 %d입니다\n", answer)
 	}
 
 }
