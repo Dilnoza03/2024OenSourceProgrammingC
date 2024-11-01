@@ -27,10 +27,12 @@ func main() {
 		isPrime = false
 	} else {
 		j := 2
-		for j <= n {
+		for j < n {
 			if n%j == 0 {
 				isPrime = false
+				break
 			}
+			fmt.Printf("%d ", j) // Check j loop
 			j++
 		}
 	}
