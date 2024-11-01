@@ -21,16 +21,19 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	counts := 0
-	j := 1
+	// counts := 0
+	var isPrime bool = true
+	j := 2
 	for j <= n {
 		if n%j == 0 {
-			counts = counts + 1
+			// counts = counts + 1
+			isPrime = false
 		}
 		j++
 	}
 
-	if counts == 2 {
+	// if counts == 2 {
+	if isPrime {
 		fmt.Printf("%d is prime number.", n)
 	} else {
 		fmt.Printf("%d is NOT prime number.", n)
