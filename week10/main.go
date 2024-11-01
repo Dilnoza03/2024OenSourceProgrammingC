@@ -21,18 +21,20 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	// counts := 0
 	var isPrime bool = true
-	j := 2
-	for j <= n {
-		if n%j == 0 {
-			// counts = counts + 1
-			isPrime = false
+	//bug fix
+	if n <= 1 {
+		isPrime = false
+	} else {
+		j := 2
+		for j <= n {
+			if n%j == 0 {
+				isPrime = false
+			}
+			j++
 		}
-		j++
 	}
 
-	// if counts == 2 {
 	if isPrime {
 		fmt.Printf("%d is prime number.", n)
 	} else {
