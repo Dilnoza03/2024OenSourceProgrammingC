@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt" // Импортируем пакет для форматированного ввода-вывода
 	"log" // Импортируем пакет для логирования ошибок
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -29,17 +28,18 @@ func main() {
 		isPrime = false
 	} else if n == 2 {
 		isPrime = true
-	} else if n%2 == 0 { // all even number except 2 are not prime
+	} else if n%2 == 0 {
 		isPrime = true
-	} else { //odd numbers
-		j := 3 //start value
-		for j <= int(math.Sqrt(float64(n))) {
+	} else {
+		j := 3
+		// for j <= int(math.Sqrt(float64(n))) {
+		for j*j <= n {
 			if n%j == 0 {
 				isPrime = false
 				break
 			}
 			fmt.Printf("%d ", j)
-			j = j + 2 //increament
+			j = j + 2
 		}
 	}
 
