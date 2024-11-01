@@ -4,14 +4,16 @@ import (
 	"bufio"
 	"fmt" // Импортируем пакет для форматированного ввода-вывода
 	"log" // Импортируем пакет для логирования ошибок
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 func main() {
-	in := bufio.NewReader(os.Stdin)
+	// fmt.Printf("%f\n", math.Sqrt(19.0))
 	fmt.Println("Input number:")
+	in := bufio.NewReader(os.Stdin)
 	i, err := in.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
@@ -27,7 +29,7 @@ func main() {
 		isPrime = false
 	} else {
 		j := 2
-		for j < n {
+		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isPrime = false
 				break
