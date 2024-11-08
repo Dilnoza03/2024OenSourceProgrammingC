@@ -2,8 +2,8 @@ package main
 
 import (
 	"bufio"
-	"fmt" // Импортируем пакет для форматированного ввода-вывода
-	"log" // Импортируем пакет для логирования ошибок
+	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -22,38 +22,33 @@ func isPrime(n int) bool {
 			if n%j == 0 {
 				return false
 			}
-			fmt.Printf("%d ", j)
 			j = j + 2
 		}
 	}
 	return true
-
 }
 
-func main() {
-
-	fmt.Print("Input start number:")
+func getInteger() int {
 	in := bufio.NewReader(os.Stdin)
 	a, err := in.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
 	}
 	a = strings.TrimSpace(a)
-	n1, err := strconv.Atoi(a)
+	n, err := strconv.Atoi(a)
 	if err != nil {
 		log.Fatal(err)
 	}
+	return n
+}
 
-	fmt.Print("Input end number:")
-	b, err := in.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
-	}
-	b = strings.TrimSpace(b)
-	n2, err := strconv.Atoi(b)
-	if err != nil {
-		log.Fatal(err)
-	}
+func main() {
+	fmt.Print("Input start number: ")
+	n1 := getInteger()
+
+	fmt.Print("Input end number: ")
+	n2 := getInteger()
+
 	for j := n1; j <= n2; j++ {
 		if isPrime(j) {
 			fmt.Printf("%d ", j)
